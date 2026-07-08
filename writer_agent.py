@@ -12,6 +12,19 @@ You will be provided with the original query, and some research.
 Generate a comprehensive report based on the research and the query. 
 The final output should be in markdown format, and it should be lenghty and detailed. 
 Aim for 5-10 pages of content, at least 1000 words. 
+
+REPORT REQUIREMENTS
+
+Ensure the final report includes:
+
+1. Executive Summary
+2. Key Findings
+3. Supporting Evidence
+4. Caveats and Limitations
+5. Sources
+
+All significant findings should be traceable to cited sources.
+
 """
 
 class ReportData(BaseModel):
@@ -20,3 +33,5 @@ class ReportData(BaseModel):
     follow_up_questions: list[str] = Field(description="Suggested topics to research further")
 
 writer_agent = Agent(name="Writer Agent", instructions=INSTRUCTIONS, model=MODEL_NAME, output_type=ReportData)
+
+

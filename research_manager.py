@@ -13,6 +13,16 @@ class ResearchManager:
 
         with trace("Research trace", trace_id=trace_id):
             yield f"Starting research." 
+            
+
+
+
+
+
+
+
+
+
 
             search_plan = await self.plan_searches(query=query)
             #yield f"Searches planned, starting {len(search_plan.searches)} searches"

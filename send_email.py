@@ -7,7 +7,7 @@ APPIAN_BASE_URL = os.getenv("APPIAN_ENV_BASE_URL")
 APPIAN_API_KEY = os.getenv("APPIAN_API_KEY")
 
 
-def send_email(subject: str, html_body: str):
+def send_email(subject: str, html_body: str, to: str):
     endpoint_url = f"{APPIAN_BASE_URL}" + "/send-email"
     headers = {
         "Appian-API-Key": APPIAN_API_KEY,
@@ -15,7 +15,8 @@ def send_email(subject: str, html_body: str):
     }
     payload = {
         "subject": subject,
-        "emailBody": html_body
+        "emailBody": html_body,
+        "to": to
     }
     print("Calling Appian To Send Email")
     response = requests.post(endpoint_url, headers=headers, json=payload)

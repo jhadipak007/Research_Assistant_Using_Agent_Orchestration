@@ -17,6 +17,7 @@ Rules:
 - Each question must be concise, specific, and directly tied to an ambiguity or gap in the original request.
 - Do not answer the original question. Do not offer advice, caveats, or explanations. Only ask the clarifying questions.
 - If the request is already clear enough to answer without clarification, you shouldn't generate any clarifying questions."
+- You must always ask the receipient email address to which the research report needs to be sent. This should be the last clarification question in your list.
 """
 
 class Question(BaseModel):
